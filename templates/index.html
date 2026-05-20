@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -11,9 +11,12 @@
             font-family: Arial, sans-serif;
             background: #f4f4f4;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            justify-content: flex-start;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
+            padding: 30px;
+            gap: 30px;
         }
 
         .container{
@@ -24,9 +27,23 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
 
+        .info-container{
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            width: 700px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
         h1{
             text-align: center;
             color: #2e7d32;
+        }
+
+        .info-container h2{
+            text-align: center;
+            color: #2e7d32;
+            margin-bottom: 20px;
         }
 
         input{
@@ -58,6 +75,32 @@
             background: #e8f5e9;
             padding: 15px;
             border-radius: 10px;
+        }
+
+        .cards{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .card{
+            background: #f1f8e9;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 5px solid #2e7d32;
+        }
+
+        .card h3{
+            margin-top: 0;
+            color: #2e7d32;
+            font-size: 17px;
+        }
+
+        .card p{
+            margin: 0;
+            color: #333;
+            font-size: 14px;
+            line-height: 1.6;
         }
 
     </style>
@@ -107,6 +150,89 @@
     </div>
 
     {% endif %}
+
+</div>
+
+
+<div class="info-container">
+
+    <h2>Dicas e Informações</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>💡 Como economizar energia</h3>
+            <p>
+                Troque lâmpadas por LED, desligue aparelhos da tomada
+                e evite deixar luzes acesas sem necessidade.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🚿 Chuveiro elétrico</h3>
+            <p>
+                O chuveiro é um dos aparelhos que mais consomem energia.
+                Banhos mais curtos ajudam bastante na economia.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>❄️ Uso do ar-condicionado</h3>
+            <p>
+                Limpar os filtros regularmente melhora o funcionamento
+                e reduz o gasto de energia elétrica.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>☀️ Como calcular o sistema solar</h3>
+            <p>
+                O tamanho do sistema depende do consumo mensal em kWh.
+                Quanto maior o consumo, mais placas serão necessárias.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>💰 Vale a pena?</h3>
+            <p>
+                Em muitos casos, o investimento se paga entre 3 e 7 anos,
+                trazendo economia por décadas.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🌱 Benefícios ambientais</h3>
+            <p>
+                A energia solar reduz a emissão de poluentes e ajuda
+                na preservação do meio ambiente.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🔋 Caso a energia solar não seja acessível</h3>
+            <p>
+                Pequenas mudanças na rotina já podem diminuir bastante
+                a conta de luz, mesmo sem instalar placas solares.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>📉 Economia na conta</h3>
+            <p>
+                Sistemas solares podem reduzir até 90% da conta de energia,
+                dependendo da região e do consumo da residência.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🏠 Valorização do imóvel</h3>
+            <p>
+                Casas com energia solar costumam ter maior valorização
+                no mercado imobiliário.
+            </p>
+        </div>
+
+    </div>
 
 </div>
 
