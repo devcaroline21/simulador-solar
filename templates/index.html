@@ -107,51 +107,58 @@
 </head>
 <body>
 
-<div class="container">
+    <div class="container">
 
-    <h1>Simulador Solar</h1>
+        <h1>Simulador de Energia Solar</h1>
 
-    <form method="POST">
+        <form method="POST">
 
-        <label>Conta de luz mensal (R$)</label>
-        <input type="number" step="0.01" name="conta" required>
+            <label>Consumo mensal (kWh)</label>
+            <input type="number" name="consumo" required>
 
-        <label>Consumo mensal (kWh)</label>
-        <input type="number" step="0.01" name="consumo" required>
+            <label>Valor da conta de luz (R$)</label>
+            <input type="number" name="conta" required>
 
-        <label>Custo do sistema solar (R$)</label>
-        <input type="number" step="0.01" name="custo" required>
+            <button type="submit">Calcular</button>
 
-        <button type="submit">Calcular</button>
+        </form>
 
-    </form>
+        {% if resultado %}
 
-    {% if resultado %}
+        <div class="resultado">
 
-    <div class="resultado">
+            <h2>Resultado</h2>
 
-        <h3>Resultado</h3>
+            <p>
+                <strong>Quantidade de placas:</strong>
+                {{ resultado.placas }}
+            </p>
 
-        <p>
-            <strong>Economia mensal:</strong>
-            R$ {{ resultado.economia_mensal }}
-        </p>
+            <p>
+                <strong>Custo estimado do sistema:</strong>
+                R$ {{ resultado.custo }}
+            </p>
 
-        <p>
-            <strong>Economia anual:</strong>
-            R$ {{ resultado.economia_anual }}
-        </p>
+            <p>
+                <strong>Economia máxima mensal:</strong>
+                R$ {{ resultado.economia_mensal }}
+            </p>
 
-        <p>
-            <strong>Tempo de retorno:</strong>
-            {{ resultado.retorno_anos }} anos
-        </p>
+            <p>
+                <strong>Economia anual:</strong>
+                R$ {{ resultado.economia_anual }}
+            </p>
+
+            <p>
+                <strong>Tempo para retorno:</strong>
+                {{ resultado.retorno }} anos
+            </p>
+
+        </div>
+
+        {% endif %}
 
     </div>
-
-    {% endif %}
-
-</div>
 
 
 <div class="info-container">
@@ -163,72 +170,64 @@
         <div class="card">
             <h3>💡 Como economizar energia</h3>
             <p>
-                Troque lâmpadas por LED, desligue aparelhos da tomada
-                e evite deixar luzes acesas sem necessidade.
+                Economizar energia significa utilizar a eletricidade de forma consciente e eficiente, reduzindo desperdícios sem deixar de aproveitar o conforto do dia a dia. Pequenas atitudes, como trocar lâmpadas comuns por LED, aproveitar a iluminação natural, desligar aparelhos da tomada, evitar banhos demorados e escolher eletrodomésticos com selo de eficiência energética, ajudam a diminuir o consumo e o valor da conta de luz. Além da economia financeira, essas práticas também contribuem para reduzir os impactos ambientais causados pela geração de energia.
+
             </p>
         </div>
 
         <div class="card">
-            <h3>🚿 Chuveiro elétrico</h3>
+            <h3>🏷️ Como escolher aparelhos mais econômicos</h3>
             <p>
-                O chuveiro é um dos aparelhos que mais consomem energia.
-                Banhos mais curtos ajudam bastante na economia.
+                Antes de comprar eletrodomésticos, é importante verificar o Selo Procel e a etiqueta de eficiência energética do Inmetro. Equipamentos com classificação “A” consomem menos energia e ajudam a reduzir os gastos na conta de luz ao longo do tempo, além de serem mais sustentáveis.
             </p>
         </div>
 
         <div class="card">
-            <h3>❄️ Uso do ar-condicionado</h3>
+            <h3>🌍 Por que economizar energia é importante?</h3>
             <p>
-                Limpar os filtros regularmente melhora o funcionamento
-                e reduz o gasto de energia elétrica.
+                Economizar energia ajuda não apenas no bolso, mas também no meio ambiente. Parte da energia produzida ainda vem de fontes poluentes, que liberam gases responsáveis pelas mudanças climáticas. Pequenas atitudes no dia a dia, como evitar desperdícios e utilizar aparelhos mais eficientes, contribuem para um consumo mais consciente e sustentável.
             </p>
         </div>
 
         <div class="card">
             <h3>☀️ Como calcular o sistema solar</h3>
             <p>
-                O tamanho do sistema depende do consumo mensal em kWh.
-                Quanto maior o consumo, mais placas serão necessárias.
+                Para descobrir quantas placas solares são necessárias, primeiro é preciso verificar o consumo mensal de energia da casa, informação que aparece na conta de luz em kWh. Depois, divide-se esse valor pela quantidade média de energia que uma placa consegue gerar por mês. Em geral, uma placa solar residencial produz cerca de 50 kWh mensais, mas isso pode variar conforme a região e a quantidade de sol recebida. Por exemplo, se uma casa consome 400 kWh por mês, serão necessárias aproximadamente 8 placas solares para atender esse consumo. Além disso, fatores como espaço no telhado, sombras e inclinação do local também influenciam no cálculo do sistema.
             </p>
         </div>
 
         <div class="card">
             <h3>💰 Vale a pena?</h3>
             <p>
-                Em muitos casos, o investimento se paga entre 3 e 7 anos,
-                trazendo economia por décadas.
+                Em muitos casos, a instalação de um sistema solar representa um investimento com ótimo retorno a longo prazo. Apesar do custo inicial ser mais alto, a economia gerada na conta de luz pode fazer com que o sistema se pague entre 3 e 7 anos, dependendo do consumo da residência e da região. Após esse período, a energia produzida continua trazendo economia por muitos anos, já que as placas solares possuem longa vida útil e baixa necessidade de manutenção.
             </p>
         </div>
 
         <div class="card">
             <h3>🌱 Benefícios ambientais</h3>
             <p>
-                A energia solar reduz a emissão de poluentes e ajuda
-                na preservação do meio ambiente.
+                A energia solar é considerada uma fonte limpa e renovável, pois produz eletricidade sem emitir poluentes durante a geração de energia. Seu uso ajuda a reduzir a dependência de fontes mais poluentes e contribui para diminuir os impactos ambientais causados pela produção tradicional de eletricidade. Além disso, incentiva práticas mais sustentáveis e o uso consciente dos recursos naturais.
             </p>
         </div>
 
         <div class="card">
             <h3>🔋 Caso a energia solar não seja acessível</h3>
             <p>
-                Pequenas mudanças na rotina já podem diminuir bastante
-                a conta de luz, mesmo sem instalar placas solares.
+                Mesmo sem instalar placas solares, ainda é possível diminuir bastante o valor da conta de luz com mudanças simples na rotina. Reduzir o tempo de banho, utilizar eletrodomésticos mais eficientes, evitar aparelhos ligados sem necessidade e aproveitar melhor a ventilação e a iluminação natural já podem gerar uma economia significativa. Pequenas atitudes diárias fazem diferença tanto no bolso quanto no meio ambiente.
             </p>
         </div>
 
         <div class="card">
             <h3>📉 Economia na conta</h3>
             <p>
-                Sistemas solares podem reduzir até 90% da conta de energia,
-                dependendo da região e do consumo da residência.
+                Dependendo do tamanho do sistema instalado e do consumo da residência, a energia solar pode reduzir grande parte da conta de luz, chegando em muitos casos a economias acima de 80% ou até 90%. Mesmo em dias nublados, as placas continuam gerando energia, embora em menor quantidade. Além disso, o excedente produzido pode virar créditos energéticos para serem utilizados em outros períodos.
             </p>
         </div>
 
         <div class="card">
             <h3>🏠 Valorização do imóvel</h3>
             <p>
-                Casas com energia solar costumam ter maior valorização
-                no mercado imobiliário.
+                Imóveis com sistemas de energia solar costumam ser mais valorizados no mercado imobiliário, pois oferecem economia de energia e menor custo mensal para os moradores. Muitas pessoas enxergam a instalação solar como um diferencial importante na hora de comprar ou alugar um imóvel, principalmente pela possibilidade de reduzir gastos ao longo dos anos e aumentar a eficiência energética da casa.
             </p>
         </div>
 
