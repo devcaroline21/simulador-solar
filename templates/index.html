@@ -6,6 +6,69 @@
     <title>Simulador de Energia Solar</title>
 
     <style>
+        .header{
+            width: 100%;
+            background: linear-gradient(90deg, #1b5e20, #43a047);
+            color: white;
+            padding: 18px 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content{
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1{
+            color: white;
+            font-size: 28px;
+            letter-spacing: 1px;
+        }
+
+        .header p{
+            margin: 0;
+            font-size: 14px;
+            opacity: 0.95;
+        }
+
+        .botao-header{
+            background: white;
+            color: #2e7d32;
+            padding: 10px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+
+        .botao-header:hover{
+            background: #e8f5e9;
+        }
+        .sobre-projeto{
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            width: 90%;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .sobre-projeto h2{
+            color: #2e7d32;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .sobre-projeto p{
+            color: #333;
+            line-height: 1.6;
+            font-size: 20px;
+        }
+
 
         body{
             font-family: Arial, sans-serif;
@@ -15,7 +78,6 @@
             justify-content: flex-start;
             align-items: center;
             min-height: 100vh;
-            padding: 30px;
             gap: 30px;
         }
 
@@ -31,7 +93,7 @@
             background: white;
             padding: 25px;
             border-radius: 15px;
-            width: 700px;
+            width: 85%;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
 
@@ -99,15 +161,44 @@
         .card p{
             margin: 0;
             color: #333;
-            font-size: 14px;
+            font-size: 16px;
             line-height: 1.6;
         }
 
     </style>
 </head>
-<body>
 
-    <div class="container">
+
+<body>
+    <header class="header">
+
+        <div class="header-content">
+
+            <h1>EcoEnergia</h1>
+
+            <p>
+                Tecnologia, sustentabilidade e economia em um só lugar.
+            </p>
+
+            <a href="#simulador" class="botao-header">
+                Acessar Simulador
+            </a>
+
+        </div>
+
+    </header>
+
+    <div class="sobre-projeto">
+
+        <h2>Sobre o Projeto</h2>
+
+        <p>
+            Este projeto foi criado com o objetivo de ajudar pessoas a entenderem melhor o consumo de energia elétrica e descobrir se a instalação de placas solares pode trazer economia financeira. O simulador calcula uma estimativa de economia mensal, anual
+            e o tempo aproximado para o retorno do investimento em energia solar. Além disso, o projeto também apresenta dicas de eficiência energética para reduzir o consumo mesmo sem utilizar placas solares.
+        </p>
+
+    </div>
+    <div class="container" id="simulador">
 
         <h1>Simulador de Energia Solar</h1>
 
